@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const debug = require('debug')('app:bin:compile')
 const webpackConfig = require('../config/webpack.config')
 const project = require('../config/project.config')
-
+const path =require("path");
 // Wrapper around webpack to promisify its compiler and supply friendly logging
 const webpackCompiler = (webpackConfig) =>
   new Promise((resolve, reject) => {
@@ -53,4 +53,6 @@ const compile = () => {
     })
 }
 
-compile()
+
+
+compile();

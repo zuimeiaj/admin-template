@@ -1,6 +1,15 @@
-import HomeView from './components/HomeView'
+/**
+ *  created by yaojun on 2017/8/4
+ *
+ */
 
-// Sync route definition
-export default {
-  component : HomeView
+import React from "react";
+
+export default class Component extends React.Component {
+    render() {
+        return (
+            <div style={{height:600}}>
+                Home page
+            </div>)
+    }
 }

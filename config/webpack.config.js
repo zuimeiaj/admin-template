@@ -5,7 +5,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const project = require('./project.config')
 const debug = require('debug')('app:config:webpack')
-
+const fs =require("fs");
+const path =require("path");
 const __DEV__ = project.globals.__DEV__
 const __PROD__ = project.globals.__PROD__
 const __TEST__ = project.globals.__TEST__
@@ -24,7 +25,8 @@ const webpackConfig = {
 // ------------------------------------
 // Entry Points
 // ------------------------------------
-const APP_ENTRY = project.paths.client('main.js')
+const APP_ENTRY = project.paths.client('main.js');
+
 
 webpackConfig.entry = {
   app : __DEV__
@@ -45,10 +47,12 @@ webpackConfig.output = {
 // ------------------------------------
 // Externals
 // ------------------------------------
-webpackConfig.externals = {}
+
+
+webpackConfig.externals={}
 webpackConfig.externals['react/lib/ExecutionEnvironment'] = true
 webpackConfig.externals['react/lib/ReactContext'] = true
-webpackConfig.externals['react/addons'] = true
+webpackConfig.externals['react/addons'] = true;
 
 // ------------------------------------
 // Plugins
