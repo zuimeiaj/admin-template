@@ -55,7 +55,7 @@ After confirming that your development environment meets the specified [requirem
 First, clone the project:
 
 ```bash
-$ git clone https://github.com/zuimeiaj/react-redux-starter-kit <my-project-name>
+$ git clone https://github.com/zuimeiaj/react-redux-starter-kit.git <my-project-name>
 $ cd <my-project-name>
 ```
 
