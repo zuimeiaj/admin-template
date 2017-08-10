@@ -5,6 +5,7 @@
 
 import React from "react";
 import {Layout,Menu,Icon} from "antd";
+import {browserHistory as bsHistory} from "react-router";
 import "./index.scss";
 const Header =Layout.Header;
 const Content =Layout.Content;
@@ -15,7 +16,15 @@ const SubMenu=Menu.SubMenu;
 export default class Component extends React.Component {
     state={
         collapsed: false,
+        selectedKeys:[]
     };
+    componentWillMount(){
+       const route= bsHistory.getCurrentLocation();
+       const path=route.pathname;
+       this.state.selectedKeys=[path];
+       
+       
+    }
     onCollapse(collapsed) {
         
         this.setState({collapsed});
@@ -35,9 +44,9 @@ export default class Component extends React.Component {
                             <div className="logo">
     
                             </div>
-                            <Menu onClick={(e)=>this.handleMenuClick(e)} theme="dark" mode={'inline'}>
-                                <MenuItem key="home"><Icon type="desktop"/><span>Home</span></MenuItem>
-                                <MenuItem key="counter"><Icon type="pie-chart"/><span>Counter</span></MenuItem>
+                            <Menu defaultSelectedKeys={this.state.selectedKeys} onClick={(e)=>this.handleMenuClick(e)} theme="dark" mode={'inline'}>
+                                <MenuItem key="/core/home"><Icon type="desktop"/><span>Home</span></MenuItem>
+                                <MenuItem key="/core/counter"><Icon type="pie-chart"/><span>Counter</span></MenuItem>
                                
                             </Menu>
                         </Sider>

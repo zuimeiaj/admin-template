@@ -1,0 +1,9 @@
+.common-query-form.ant-form-inline{
+  padding-bottom: 18px;
+  >div>.ant-form-item{
+    height: 38px;
+    .ant-input-lg,.ant-select-selection{
+      width: 200px;
+    }
+  }
+}

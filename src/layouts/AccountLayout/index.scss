@@ -1,0 +1,24 @@
+.login-form{
+  width: 320px;
+  margin: 100px auto;
+  border-radius: 3px;
+  padding: 12px 24px;
+  box-shadow: 0 0 5px #dddddd;
+  .title{
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+  }
+}
+
+.login-btn,.login-btn span{
+  display: block;
+  width: 100%;
+}
+
+.login-layout{
+  .ant-input-group-wrapper{
+    width: 100%;
+  }
+}
