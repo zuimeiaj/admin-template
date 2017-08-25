@@ -28,27 +28,8 @@ export default class Component extends Query {
                        getFieldDecorator("weight")(<Input/>)
                    }
                </FormItem>
-               <FormItem label={'性别'}>
-                   {
-                       getFieldDecorator("sex")(
-                           <Select>
-                               <Select.Option value="1">男</Select.Option>
-                               <Select.Option value="2">女</Select.Option>
-
-                           </Select>
-                       )
-                   }
-               </FormItem>
-               <FormItem label={'电话'}>
-                   {
-                       getFieldDecorator("mobile")(<Input/>)
-                   }
-               </FormItem>
-               <FormItem label={'地址'}>
-                   {
-                       getFieldDecorator("address")(<Input/>)
-                   }
-               </FormItem>
+             
+              
                
                 {ActionBar}
             </div>
@@ -59,7 +40,7 @@ export default class Component extends Query {
    
    renderContent(){
        return (
-           <Table bordered columns={[
+           <Table  columns={[
                {
                    title:"姓名",
                    dataIndex:"name"
@@ -90,7 +71,31 @@ export default class Component extends Query {
                    name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"51382519960908121216"
                },{
                    name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"51382519960908121217"
-               },
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"513825199609081212"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"234"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"5138251234239960908121217"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"234"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"513823242342519960908121217"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"1231"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"324"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"32423"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"23423"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"51382519960321321908121217"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"5138251912314cv960908121217"
+               },{
+                   name:"李小明",age:"36",sex:"男","height":"176","weight":"148","mobile":"18684034307",address:"四川省成都市武侯区",id:"fs"
+               }
            ]} rowkey={'id'}>
            
            </Table>

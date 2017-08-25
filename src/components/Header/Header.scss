@@ -2,3 +2,39 @@
   font-weight: bold;
   text-decoration: underline;
 }
+
+.layout-header{
+  line-height: 64px;
+  .notification{
+    float: right;
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 23px;
+
+  }
+  .layout-header-avatar{
+    width: 32px;
+    display: inline-block;
+    height: 32px;
+    border-radius: 100px;
+    overflow: hidden;
+    text-align: center;
+    margin-top: 18px;
+    float: right;
+    margin-right: 12px;
+  }
+}
+
+.avatar-setting-panel{
+
+  .item{
+    padding: 6px;
+    border-bottom: 1px solid #ececec;
+    &:last-child{
+      border:0;
+    }
+    .anticon{
+      margin-right: 8px;
+    }
+  }
+}

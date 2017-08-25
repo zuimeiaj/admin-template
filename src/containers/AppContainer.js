@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {browserHistory as bsHistory, Router} from "react-router";
-
+import "../styles/core.scss";
 class AppContainer extends Component {
     
     componentWillMount(){

@@ -13,7 +13,12 @@ body {
   padding: 0;
   height: 100%;
 }
-
+table{
+  background: #ffffff;
+  .ant-table-tbody>tr>td, .ant-table-thead>tr>th{
+    padding: 10px;
+  }
+}
 *,
 *:before,
 *:after {

@@ -1,18 +1,35 @@
 import React from 'react'
-import { IndexLink, Link } from 'react-router'
+import {Layout,Icon,Badge,Popover} from "antd";
+import {Link} from "react-router";
+const HeaderComponent =Layout.Header;
 import './Header.scss'
 
-export const Header = () => (
-  <div>
-    <h1>React  Starter Kit</h1>
-    <IndexLink to='/home' activeClassName='route--active'>
-      Home
-    </IndexLink>
-      {'/'}
-    <Link to='/counter' activeClassName='route--active'>
-      Counter
-    </Link>
-  </div>
-)
+class Header extends React.Component{
+    exit(){}
+    render(){
+        return  (
+            <HeaderComponent className="layout-header">
+                <Badge className="notification" count={6} >
+            
+                    <Icon  type="mail"/>
+                </Badge>
+                <Popover replacement="bottom"
+                         content={
+                             <div className="avatar-setting-panel">
+                                 <div className="item">
+                                     <Link to="personal"><Icon type="user"/>个人中心</Link>
+                                 </div>
+                                 <div className="item">
+                                     <a onClick={()=>this.exit()}><Icon type="logout"/>退出</a>
+                                 </div>
+                             </div>
+                         }>
+                    <img className="layout-header-avatar" height={52} src={require("./assets/cat.jpg" )}/>
+                </Popover>
+            </HeaderComponent>
+        )
+    }
+}
+
 
 export default Header

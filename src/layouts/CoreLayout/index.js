@@ -4,10 +4,11 @@
  */
 
 import React from "react";
-import {Layout,Menu,Icon} from "antd";
+import {Layout,Menu,Icon,Breadcrumb} from "antd";
 import {browserHistory as bsHistory} from "react-router";
+import {Link} from "react-router"
 import "./index.scss";
-const Header =Layout.Header;
+import Header from "../../components/Header";
 const Content =Layout.Content;
 const Footer =Layout.Footer;
 const Sider =Layout.Sider;
@@ -34,6 +35,8 @@ export default class Component extends React.Component {
     }
     render() {
         const {children}=this.props;
+        const routes =this.props.router.routes;
+        console.log(routes)
         return (
                 <Layout>
                         <Sider
@@ -50,10 +53,19 @@ export default class Component extends React.Component {
                                
                             </Menu>
                         </Sider>
-                    <Layout>
+                    <Layout style={{overflowY:"scroll"}}>
+                       
                         <Header/>
-                        <Content style={{padding:24}}>{children}</Content>
-                        <Footer/>
+                        <Breadcrumb className="layout-breadcrumb" routes={this.props.router.routes} itemRender={(route, params, routes, paths)=>{
+                            if(route.path ==="/") return <Icon type="home"/>;
+                            const last = routes.indexOf(route) === routes.length - 1;
+                            return last ? <span>{route.breadcrumbName}</span> : <Link to={paths.join('/')}>{route.breadcrumbName}</Link>;
+                        }}/>
+                    
+                        <Content style={{padding:12}}>{children}</Content>
+                        <Footer>
+                            © 2017  Admin Template  powered by antd
+                        </Footer>
                     </Layout>
                    
                    
