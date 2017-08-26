@@ -10,3 +10,78 @@ For example:
 @import './variables/components';
 @import './themes/default';
 */
+
+.pull-left{
+  float: left;
+}
+.pull-right{
+  float: right;
+}
+.overflow{
+  overflow: hidden;
+}
+$color-success:#4caf50;
+$color-primary:#2196f3;
+$color-info:#03a9f4;
+$color-danger:#f44336;
+$color-warning:#ff9800;
+$color-gray:#9e9e9e;
+$color-dignity:#673ab7;
+
+.text-success{
+  color: $color-success;
+}
+.text-danger{
+  color: $color-danger;
+}
+.text-primary{
+  color: $color-primary;
+}
+.text-warning{
+  color: $color-warning;
+}
+.text-gray{
+  color: $color-gray;
+}
+.text-dignity{
+  color: $color-dignity;
+}
+.text-info{
+  color: $color-info;
+}
+
+
+
+.bg-success{
+  background-color: $color-success;
+}
+.bg-danger{
+  background-color: $color-danger;
+}
+.bg-primary{
+  background-color: $color-primary;
+}
+.bg-warning{
+  background-color: $color-warning;
+}
+.bg-gray{
+  background-color: $color-gray;
+}
+.bg-dignity{
+  background-color: $color-dignity;
+}
+.bg-info{
+  background-color: $color-info;
+}
+
+
+.center{
+  text-align: center;
+}
+
+$margin-sm:6px;
+$margin-md:12px;
+$margin-lg:24px;
+.mar-l-sm{
+  margin-left: $margin-sm;
+}

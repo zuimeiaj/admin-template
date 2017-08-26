@@ -5,7 +5,7 @@
 
 import React from "react";
 import Query from "../../components/Query/index";
-import {Form,Input,Table,Select} from "antd";
+import {Form,Input,Table,Select,Button} from "antd";
 const FormItem =Form.Item;
 
 export default class Component extends Query {
@@ -40,7 +40,21 @@ export default class Component extends Query {
    
    renderContent(){
        return (
-           <Table  columns={[
+           
+           <div>
+               <div className="overflow" style={{marginBottom:3}}>
+                   <span className="pull-left">共搜索到<strong className="text-success">22</strong>条记录</span>
+                   <span className="pull-right">
+                       <Button onClick={()=>this.props.router.push("/core/home/add")} icon={'plus-circle-o'}>新建</Button>
+                       <Button className="mar-l-sm" icon={'upload'}>导入</Button>
+                       <Button className='mar-l-sm' icon={'export'}>导出</Button>
+                   </span>
+               </div>
+           <Table
+               
+               
+               
+               columns={[
                {
                    title:"姓名",
                    dataIndex:"name"
@@ -63,8 +77,16 @@ export default class Component extends Query {
                    title:"地址",
                    dataIndex:"address"
                },{
-                   title:"身份证",
-                   dataIndex:"id"
+                   title:"操作" ,
+                   render:(a,col)=>{
+                       return (
+                           <div>
+                               <Button onClick={()=>this.props.router.push(`/core/home/${col.id}/edit`)} type={'primary'} icon={'edit'} shape={'circle'}/>
+                               <Button type={'danger'} className='mar-l-sm' icon={'delete'} shape={'circle'}/>
+                               <Button onClick={()=>this.props.router.push(`/core/home/${col.id}/detail`)} className='mar-l-sm' icon={'eye'} shape={'circle'}/>
+                           </div>
+                       )
+                   }
                }
            ]} dataSource={[
                {
@@ -99,6 +121,7 @@ export default class Component extends Query {
            ]} rowkey={'id'}>
            
            </Table>
+           </div>
        )
    }
 }

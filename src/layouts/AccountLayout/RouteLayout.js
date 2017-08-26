@@ -1,6 +1,10 @@
-
-import AccountLayout from "./index";
+import "./index.scss"
 module.exports={
-    path:"login",
-    component:AccountLayout
+    path: "login",
+    getComponents: (a, cb)=> {
+        require.ensure([], (require)=> {
+            cb(null, require("./index").default);
+            
+        })
+    }
 }

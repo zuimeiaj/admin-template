@@ -48,6 +48,7 @@ export default class Component extends React.Component {
     
                             </div>
                             <Menu defaultSelectedKeys={this.state.selectedKeys} onClick={(e)=>this.handleMenuClick(e)} theme="dark" mode={'inline'}>
+                                <MenuItem key="/core/dashboard"><Icon type="appstore"/><span>Dashboard</span></MenuItem>
                                 <MenuItem key="/core/home"><Icon type="desktop"/><span>Home</span></MenuItem>
                                 <MenuItem key="/core/counter"><Icon type="pie-chart"/><span>Counter</span></MenuItem>
                                
@@ -59,7 +60,7 @@ export default class Component extends React.Component {
                         <Breadcrumb className="layout-breadcrumb" routes={this.props.router.routes} itemRender={(route, params, routes, paths)=>{
                             if(route.path ==="/") return <Icon type="home"/>;
                             const last = routes.indexOf(route) === routes.length - 1;
-                            return last ? <span>{route.breadcrumbName}</span> : <Link to={paths.join('/')}>{route.breadcrumbName}</Link>;
+                            return last ? <span>{route.breadcrumbName}</span> : <Link to={"/"+paths.join('/')}>{route.breadcrumbName}</Link>;
                         }}/>
                     
                         <Content style={{padding:12}}>{children}</Content>

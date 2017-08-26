@@ -28,10 +28,9 @@ export default class Query extends React.Component {
                         (
                             <FormItem>
                                 <Button  type={"primary"} htmlType={"submit"} >查询</Button>
-                                <Button onClick={()=>props.form.resetFields()} style={{marginLeft:12}} type={'danger'} >重置</Button>
+                                <Button  onClick={()=>props.form.resetFields()} style={{marginLeft:12}}  >重置</Button>
                             </FormItem>)
                     )}
-        
                 </Form>)
             }
         
@@ -49,10 +48,14 @@ export default class Query extends React.Component {
     
     render() {
         const QueryForm=this.QueryForm;
+        const children =this.props.children;
         return (
             <div>
-                <QueryForm/>
-                {this.renderContent()}
+                {children}
+                <div style={{display:children?"none":"block"}}>
+                    <QueryForm/>
+                    {this.renderContent()}
+                </div>
             </div>
         )
     }

@@ -6,8 +6,6 @@
 import React from "react";
 import {Form,Input,Icon,Button} from "antd";
 import {browserHistory as bsHistory} from "react-router"
-import "./index.scss";
-
 const FormItem = Form.Item;
 class Login extends React.Component{
     handleSubmit(e){
@@ -15,7 +13,7 @@ class Login extends React.Component{
         this.props.form.validateFields((error,value)=>{
             if(error) return ;
             
-            bsHistory.push("core/home");
+            bsHistory.push("core/dashboard");
         });
         
     }
