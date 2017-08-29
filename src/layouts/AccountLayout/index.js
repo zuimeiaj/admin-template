@@ -4,53 +4,88 @@
  */
 
 import React from "react";
-import {Form,Input,Icon,Button} from "antd";
-import {browserHistory as bsHistory} from "react-router"
-const FormItem = Form.Item;
-class Login extends React.Component{
-    handleSubmit(e){
+import {Button, Form, Icon, Input,Checkbox} from "antd";
+import {browserHistory as bsHistory} from "react-router";
+
+
+const FormItem=Form.Item;
+
+class Login extends React.Component {
+    
+   
+    state={
+        loading:false
+    }
+    handleSubmit(e) {
         e.preventDefault();
-        this.props.form.validateFields((error,value)=>{
-            if(error) return ;
+        this.props.form.validateFields((error, value)=> {
+            if(error) return;
             
-            bsHistory.push("core/dashboard");
+            this.setState({loading:true});
+            setTimeout(()=>{
+                bsHistory.push("core/dashboard");
+            },2000);
+            
         });
         
     }
-    render(){
-        const {getFieldDecorator} =this.props.form;
-        const requiredMsg=(msg)=>({rules:[{required:true,message:msg}]});
+    
+  
+    render() {
+        const {getFieldDecorator}=this.props.form;
+        const requiredMsg=(msg)=>({rules: [{required: true, message: msg}]});
         
         return (
-            <Form onSubmit={(e)=>this.handleSubmit(e)} className="login-form">
-                <div className="title">
-                    登录
-                </div>
-                <FormItem wrapperCol={{span:24}}>
-                    {
-                        getFieldDecorator("username",requiredMsg("请输入用户名"))(<Input size='large' addonBefore={<Icon type="user"/>}/>)
-                    }
-                </FormItem>
-                <FormItem>
-                    {
-                        getFieldDecorator("password",requiredMsg("请输入密码"))(<Input addonBefore={<Icon type="lock"/>} type="password"/>)
-                    }
-                </FormItem>
+            <div>
                 
-                <FormItem>
-                    <Button className="login-btn" htmlType={"submit"}  type={"primary"}>登录</Button>
-                </FormItem>
-
-            </Form>
+               
+               
+                <Form onSubmit={(e)=>this.handleSubmit(e)} className="login-form">
+                    <img className="bg" src={require("./bg.jpg")}/>
+                    <div className="title">
+                        Admin
+                    </div>
+                    <div className="form-content">
+                        <div className="form-label">User name</div>
+                    <FormItem wrapperCol={{span: 24}}>
+                       
+                        {
+                            getFieldDecorator("username", requiredMsg("请输入用户名"))(<Input  size='large' />)
+                        } <Icon type="user"/>
+                        
+                    </FormItem>
+                        <div className="form-label">Password</div>
+                    <FormItem>
+                        {
+                            getFieldDecorator("password", requiredMsg("请输入密码"))(<Input type="password"/>)
+                        }
+                        <Icon type="lock"/>
+                    </FormItem>
+                        <div className="action-bar">
+                            <Button loading={this.state.loading} className="login-btn " htmlType={"submit"} type={"primary"}>登录</Button>
+    
+                        </div>
+                    </div>
+                    
+                   
+                    
+                    
+                    
+                
+                </Form>
+                
+                
+            </div>
         )
     }
 }
-const LoginForm = Form.create()(Login)
+
+const LoginForm=Form.create()(Login)
 
 export default class Component extends React.Component {
     
     render() {
-      
+        
         return (
             <div className="login-layout">
                 <LoginForm/>

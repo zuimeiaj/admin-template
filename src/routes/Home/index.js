@@ -5,7 +5,7 @@
 
 import React from "react";
 import Query from "../../components/Query/index";
-import {Form,Input,Table,Select,Button} from "antd";
+import {Form,Input,Table,Select,Button,Popconfirm,message} from "antd";
 const FormItem =Form.Item;
 
 export default class Component extends Query {
@@ -82,7 +82,11 @@ export default class Component extends Query {
                        return (
                            <div>
                                <Button onClick={()=>this.props.router.push(`/core/home/${col.id}/edit`)} type={'primary'} icon={'edit'} shape={'circle'}/>
+                               <Popconfirm title="确认要删除该项吗？" onConfirm={()=>{
+                                   message.success("删除成功")
+                               }}>
                                <Button type={'danger'} className='mar-l-sm' icon={'delete'} shape={'circle'}/>
+                               </Popconfirm>
                                <Button onClick={()=>this.props.router.push(`/core/home/${col.id}/detail`)} className='mar-l-sm' icon={'eye'} shape={'circle'}/>
                            </div>
                        )

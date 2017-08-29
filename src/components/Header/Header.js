@@ -1,11 +1,13 @@
 import React from 'react'
 import {Layout,Icon,Badge,Popover} from "antd";
-import {Link} from "react-router";
+import {Link,browserHistory as history} from "react-router";
 const HeaderComponent =Layout.Header;
 import './Header.scss'
 
 class Header extends React.Component{
-    exit(){}
+    exit(){
+        history.replace("/login");
+    }
     render(){
         return  (
             <HeaderComponent className="layout-header">
