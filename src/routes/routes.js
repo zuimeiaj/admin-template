@@ -4,16 +4,7 @@
 
 
 module.exports=[
-    {
-        path:"counter",
-        breadcrumbName:"计数器",
-        getComponents:(a,cb)=>{
-            require.ensure([],(require)=>{
-               cb (null,require("./Counter").default);
-    
-            })
-        }
-    },{
+   {
         path:"home",
         breadcrumbName:"首页",
         getComponents:(a,cb)=>{
@@ -55,5 +46,29 @@ module.exports=[
                 cb(null,require("./Dashboard").default);
             });
         }
-    }
+    },{
+        path:"form",
+        breadcrumbName:"表单控件",
+        getComponents:(a,cb)=>{
+            require.ensure([],require=>{
+                cb(null,require("./Form").default);
+            });
+        }
+    },{
+        path:"display",
+        breadcrumbName:"数据显示",
+        getComponents:(a,cb)=>{
+            require.ensure([],require=>{
+                cb(null,require("./Display").default);
+            });
+        }
+    },{
+        path:"feedback",
+        breadcrumbName:"反馈",
+        getComponents:(a,cb)=>{
+            require.ensure([],require=>{
+                cb(null,require("./Feedback").default);
+            });
+        }
+    },
 ]

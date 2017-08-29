@@ -41,9 +41,15 @@ class Login extends React.Component {
                
                
                 <Form onSubmit={(e)=>this.handleSubmit(e)} className="login-form">
-                    <img className="bg" src={require("./bg.jpg")}/>
+                    <img className="bg" src={require("./assets/bg.jpg")}/>
+                    <div className="beautiful-bar">
+                        <div className="bg-danger"/>
+                        <div className="bg-success"/>
+                        <div className="bg-dignity"/>
+                        <div className="bg-info"/>
+                    </div>
                     <div className="title">
-                        Admin
+                        <img style={{marginTop:16}} height={20} src={require("./assets/admin-t.png")}/>
                     </div>
                     <div className="form-content">
                         <div className="form-label">User name</div>

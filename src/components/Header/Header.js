@@ -1,5 +1,5 @@
 import React from 'react'
-import {Layout,Icon,Badge,Popover} from "antd";
+import {Layout,Icon,Badge,Popover,Button} from "antd";
 import {Link,browserHistory as history} from "react-router";
 const HeaderComponent =Layout.Header;
 import './Header.scss'
@@ -13,7 +13,7 @@ class Header extends React.Component{
             <HeaderComponent className="layout-header">
                 <Badge className="notification" count={6} >
             
-                    <Icon  type="mail"/>
+                    <Icon type="mail"  />
                 </Badge>
                 <Popover replacement="bottom"
                          content={

@@ -45,13 +45,19 @@ export default class Component extends React.Component {
                             collapsible width={220}
                             style={{backgroundColor:"#404040"}}>
                             <div className="logo">
-    
+                                <img height={32} src={require("./assets/antd-logo.png")}/>
+                                ADMIN TEMPLATE
                             </div>
                             <Menu defaultSelectedKeys={this.state.selectedKeys} onClick={(e)=>this.handleMenuClick(e)} theme="dark" mode={'inline'}>
                                 <MenuItem key="/core/dashboard"><Icon type="appstore"/><span>Dashboard</span></MenuItem>
                                 <MenuItem key="/core/home"><Icon type="desktop"/><span>Home</span></MenuItem>
-                                <MenuItem key="/core/counter"><Icon type="pie-chart"/><span>Counter</span></MenuItem>
-                               
+                                <SubMenu title={<div><Icon type="bars"/>Components</div>}>
+                                    <MenuItem title="Form" key="/core/form"><span>Form</span></MenuItem>
+                                    <MenuItem title="Display" key="/core/display"><span>Display</span></MenuItem>
+                                    <MenuItem  key="/core/feedback"><span>Feedback</span></MenuItem>
+                                </SubMenu>
+
+
                             </Menu>
                         </Sider>
                     <Layout style={{overflowY:"scroll"}}>
