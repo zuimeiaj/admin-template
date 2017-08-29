@@ -2,7 +2,7 @@
 > [原仓库地址](https://github.com/davezuko/react-redux-starter-kit),
 
 > 本starter 使用[eventbusjs](https://github.com/krasimir/EventBus) 来管理组件通信
-
+> [demo](http://dev.zuimeiaj.com/)
 > shell
 
 ```javascript
